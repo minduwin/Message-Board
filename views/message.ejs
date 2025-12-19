@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/message.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="upperBoard">
+        <div class="headPage">
+            <img src="/3p.svg" alt="">
+            <h1>Messager</h1>
+        </div>
+        <div class="mainBox">
+            <div class="user">
+                <img src="/acc.svg" alt="">
+                <div class="userDate">
+                    <p><%= message.user %></p>
+                    <span><%= message.added.toLocaleDateString('en-US', 
+                    { month: 'short', day: '2-digit' }) %></span>
+                </div>
+            </div>
+            <div class="userPost">
+                <p><%= message.text %></p>
+                <div class="postButtons">
+                    <img src="/thumb.svg" alt="">
+                    <img src="/addcomment.svg" alt="">
+                    <img src="/share.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <a href="/" class="backHome" title="Home">
+            <img src="/home.svg" alt="">
+            <p>Home</p>
+        </a>
+        <%- include('./partials/footer'); %>
+    </div>
+
+</body>
+</html>

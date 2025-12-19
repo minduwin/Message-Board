@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Message Board</title>
+</head>
+<body>
+    <div class="upperBoard">
+        <div>
+            <%- include('./partials/navbar'); %>
+        </div>
+        <div class="mainPage">
+            <div class="mainHead">
+                <%- include('./partials/header'); %>
+            </div>
+            <div class="mainMsg">
+                <h3>Messages</h3>
+                <div>
+                    <% messages.forEach((msg, index) => { %>
+                        <li class="message">
+                            <div class="msgColor"></div>
+                            <div class="msgText">
+                                <div class="mainText">
+                                    <span><%= msg.user %></span>
+                                    <p><%= msg.text %></p>
+                                </div>
+                                <div class="date">
+                                    <div class="msgDetails" title="Open Message">
+                                        <a href="/messages/<%= index %>">
+                                            <img src="./open.svg" alt="">
+                                        </a>
+                                    </div>
+                                    <span>
+                                        <%= msg.added.toLocaleDateString('en-US', 
+                                        { month: 'short', day: '2-digit' }) %>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footBar">
+        <%- include('./partials/footer'); %>
+    </div>
+</body>
+</html>

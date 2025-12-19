@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: rgb(221, 221, 221);
+}
+
+.upperBoard {
+    display: flex;
+}
+
+.mainPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto;
+
+    animation: animate 0.8s backwards;
+}
+
+.mainMsg {
+    margin: 20px 0px;
+}
+
+.mainMsg h3 {
+    text-align: center;
+    margin: 20px 0px;
+}
+
+@keyframes animate {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.message {
+    min-width: 400px;
+    min-height: 60px;
+    border: 1px solid rgb(177, 177, 177);
+    border-radius: 10px;
+    margin: 15px 10px;
+
+    display: flex;
+    position: relative;
+
+    overflow: hidden;
+    background: #fff;
+}
+
+.msgColor {
+    min-width: 15px;
+    height: auto;
+    background-color: rgb(151, 63, 233);
+    overflow: clip;
+    margin-right: 10px;
+}
+
+.msgText {
+    display: flex;
+    max-width: 300px;
+}
+
+.mainText span {
+    color: rgb(145, 145, 145);
+    font-size: 0.8em;
+    margin: 5px 0px;
+}
+
+.mainText p {
+    font-size: 1.2em;
+    margin: 5px 0px;
+}
+
+.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    position: absolute;
+    top: 10;
+    right: 0;
+    margin: 0px 5px;
+}
+
+.date span {
+    color: rgb(145, 145, 145);
+    font-size: 0.8em;
+}
+
+.msgDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.msgDetails a img {
+    width: 85%;
+}
+
+.popup-wrapper {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup-container {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+}
+
+@media (max-width: 640px) {
+    .message {
+        min-width: 350px;
+    }
+
+    .msgText {
+        max-width: 275px;
+    }
+
+    .mainText span {
+        font-size: 0.7em;
+    }
+
+    .mainText p {
+        font-size: 0.9em;
+    }
+}
